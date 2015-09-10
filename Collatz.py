@@ -10,6 +10,8 @@
 # collatz_read
 # ------------
 
+cache = []
+
 def collatz_read (s) :
     """
     read two ints
@@ -28,17 +30,29 @@ def cycleLength (i):
     i the number whose cycle length is being calculated
     return the cycle length of number i
     """
+
+    for (x, y) in cache:
+        if x == i:
+            return y
     assert(i > 0)
     count = 1
     num = i
     while (num > 1):
-        if (num % 2) == 0:
+        found = -1
+        for(x, y) in cache:
+            if(x == num):
+                found = y
+        if(found != -1):
+            count += found - 1 #subtract 1 because the count = 1 from the start of the method is now redundant
+            num = 1
+        elif (num % 2) == 0:
             num = (num // 2)
             count += 1
         else:
             num = num + (num // 2) + 1
             count += 2
     assert(count > 0)
+    cache.append((i, count))
     return count;
 
 # ------------
