@@ -33,8 +33,8 @@ def cycleLength (i):
     num = i
     while (num > 1):
         if (num % 2) == 0:
-            num = (num / 2)
-            count = count + 1
+            num = (num // 2)
+            count += 1
         else:
             num = num + (num // 2) + 1
             count += 2
@@ -54,18 +54,23 @@ def collatz_eval (i, j) :
     assert(i > 0)
     assert(j > 0)
     maxLength = -1
-    max = -1
-    min = -1
+    maxnum = -1
+    minnum = -1
     if i > j:
-        max = i
-        min = j
+        maxnum = i
+        minnum = j
     elif j > i:
-        max = j
-        min = i
-    
+        maxnum = j
+        minnum = i
     else:
         return cycleLength(i)
-    for c in range(min, max):
+    mid = (maxnum // 2) + 1;#algorithm from class cuts down on amount of cycleLength() computations if the smaller of (i, j) is less than j/2 + 1
+    start = -1
+    if(minnum < mid)
+        start = mid;
+    else
+        start = minnum;
+    for c in range(start, maxnum + 1):
         temp = cycleLength(c)
         if temp > maxLength:
             maxLength = temp
