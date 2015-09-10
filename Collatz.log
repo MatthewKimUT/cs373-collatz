@@ -1,0 +1,8 @@
+Commit 1: First commit, added all files from public code repo
+Commit 2: Fixed unit tests; went through TestCollatz.py and made the asserts correct (but fail)
+Commit 3: Added more unit tests until there were 3 per method
+Commit 4: Implemented the simplest solution to max cycle length, with assertions in code
+Commit 5: Made Collatz acceptable for the first Sphere submission
+Commit 6: Improved runtime of Collatz with class code and fixed a small bug with a for loop
+Commit 7: Added a simple version of a cache, created EID files
+Commit 8: Added a cache that finally runs
