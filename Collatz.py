@@ -69,6 +69,7 @@ def collatz_eval (i, j) :
         temp = cycleLength(c)
         if temp > maxLength:
             maxLength = temp
+    assert(maxLength > 0)
     return maxLength
 
 # -------------
