@@ -20,6 +20,28 @@ def collatz_read (s) :
     return [int(a[0]), int(a[1])]
 
 # ------------
+# cycleLength
+# ------------
+
+def cycleLength (i):
+    """
+    i the number whose cycle length is being calculated
+    return the cycle length of number i
+    """
+    assert(i > 0)
+    count = 1
+    num = i
+    while (num > 1):
+        if (num % 2) == 0:
+            num = (num / 2)
+            count = count + 1
+        else:
+            num = num + (num // 2) + 1
+            count += 2
+    assert(count > 0)
+    return count;
+
+# ------------
 # collatz_eval
 # ------------
 
@@ -29,8 +51,25 @@ def collatz_eval (i, j) :
     j the end       of the range, inclusive
     return the max cycle length of the range [i, j]
     """
-    # <your code>
-    return 1
+    assert(i > 0)
+    assert(j > 0)
+    maxLength = -1
+    max = -1
+    min = -1
+    if i > j:
+        max = i
+        min = j
+    elif j > i:
+        max = j
+        min = i
+    
+    else:
+        return cycleLength(i)
+    for c in range(min, max):
+        temp = cycleLength(c)
+        if temp > maxLength:
+            maxLength = temp
+    return maxLength
 
 # -------------
 # collatz_print
