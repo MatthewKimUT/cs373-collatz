@@ -5,12 +5,12 @@ FILES :=                              \
     RunCollatz.out                    \
     RunCollatz.py                     \
     TestCollatz.out                   \
-    TestCollatz.py
-    #collatz-tests/EID-RunCollatz.in   
-    #collatz-tests/EID-RunCollatz.out  
-    #collatz-tests/EID-TestCollatz.out 
-    #collatz-tests/EID-TestCollatz.py  
-    #Collatz.html                      
+    TestCollatz.py                    \
+    #collatz-tests/EID-RunCollatz.in  \ 
+    #collatz-tests/EID-RunCollatz.out  \
+    #collatz-tests/EID-TestCollatz.out \
+    #collatz-tests/EID-TestCollatz.py  \
+    #Collatz.html                      \
     #Collatz.log                       
 
 check:
